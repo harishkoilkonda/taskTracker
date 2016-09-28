@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular Excercise</title>
+    <link rel="stylesheet" type="text/css" href="./css/exercise.css" />
+</head>
+
+<body ng-app="myApp">
+    <div class="main" ng-controller="MainController as main">
+        <div class="head">
+            <header>
+                <h1>Task Tracker</h1>
+            </header>
+        </div>
+        <div class="art">
+            <div class="create">
+                <article>
+                    <form ng-submit="main.myform();">
+                        <p>Create a Task</p>
+                        <p>Task Name
+                            <br>
+                            <input type="text" name="task" ng-model="main.name">
+                        </p>
+                        <p>Date
+                            <br>
+                            <input type="text" name="date" ng-model="main.date">
+                        </p>
+                        <p>Assigned To
+                            <br>
+                            <input type="text" name="assigned" ng-model="main.assign">
+                        </p>
+                        <p>
+                            <button id="btn1" type="submit">Submit</button>
+                        </p>
+                    </form>
+                </article>
+            </div>
+            <div class="existing">
+                <p id="demo">
+                    <ul ng-repeat="task in main.tasks ">
+                        <li>{{task.name}} | {{task.date}} | {{task.assigned}}</li>
+                    </ul>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script type="text/javascript" src="./js/exercise.js"></script>
+    <script type="text/javascript" src="./js/second.js"></script>
+</body>
+
+</html>
